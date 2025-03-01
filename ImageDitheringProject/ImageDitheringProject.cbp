@@ -31,9 +31,12 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="GRAYSCALE.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="stb_image/stb_image.h" />
+		<Unit filename="stb_image/stb_image_write.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

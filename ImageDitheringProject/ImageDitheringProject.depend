@@ -1,11 +1,12 @@
 # depslib dependency file v1.0
-1740915942 source:d:\git\image-dithering\imageditheringproject\main.c
+1740942572 source:d:\git\image-dithering\imageditheringproject\main.c
 	<stdio.h>
 	<stdlib.h>
 	<assert.h>
 	"stb_image/stb_image.h"
 	"stb_image/stb_image_write.h"
 	"GRAYSCALE.h"
+	"BAYEROD.h"
 
 1740856894 d:\git\image-dithering\imageditheringproject\stb_image.h
 	"stb_image.h"
@@ -50,10 +51,19 @@
 	<math.h>
 	<assert.h>
 
-1740916958 d:\git\image-dithering\imageditheringproject\grayscale.h
+1740936966 d:\git\image-dithering\imageditheringproject\grayscale.h
 	<stdio.h>
 	<stdlib.h>
+	<assert.h>
 
-1740916754 source:d:\git\image-dithering\imageditheringproject\grayscale.c
+1740936941 source:d:\git\image-dithering\imageditheringproject\grayscale.c
 	"GRAYSCALE.h"
+
+1740951225 source:d:\git\image-dithering\imageditheringproject\bayerod.c
+	"BAYEROD.h"
+
+1740951237 d:\git\image-dithering\imageditheringproject\bayerod.h
+	<stdio.h>
+	<stdlib.h>
+	<assert.h>
 

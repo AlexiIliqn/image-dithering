@@ -26,6 +26,11 @@ void image_grayscale(unsigned char* data, int width, int height, int depth, unsi
                         *(out+3) = 255;
                         break;
                     }
+                default:
+                    {
+                        assert(0);
+                        break;
+                    }
             }
         }
     }

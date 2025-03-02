@@ -31,6 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="BAYEROD.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="BAYEROD.h" />
 		<Unit filename="GRAYSCALE.c">
 			<Option compilerVar="CC" />
 		</Unit>

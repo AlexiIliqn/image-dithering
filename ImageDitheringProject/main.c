@@ -8,8 +8,10 @@
 #include "stb_image/stb_image_write.h"
 
 #include "GRAYSCALE.h"
+#include "BAYEROD.h"
 
 void make_grayscale(unsigned char* data, int width, int height, int depth);
+void make_bayerod(unsigned char* data, int width, int height, int depth);
 
 int main()
 {
@@ -35,9 +37,32 @@ void make_grayscale(unsigned char* data, int width, int height, int depth)
 
     image_grayscale(data, width, height, depth, output);
 
+    make_bayerod(output, width, height, depth);
+    // bayer, floyd, atkinson
+
     assert(stbi_write_jpg("images/grayscale.jpg", width, height, depth, output, 100));
 
     free(output);
 
     printf("[GRAYSCALE]\n");
+}
+
+void make_bayerod(unsigned char* data, int width, int height, int depth)
+{
+    int bayer_matrix_size = 16;
+    float* bayer_matrix = bayer_matrix_generate(bayer_matrix_size);
+    bayer_matrix_divide(bayer_matrix, bayer_matrix_size);
+    //bayer_matrix_print(bayer_matrix, bayer_matrix_size);
+
+    unsigned char* output = malloc(sizeof(unsigned char)*width*height*depth);
+    assert(output);
+
+    image_bayerod(data, width, height, depth, output, bayer_matrix, bayer_matrix_size);
+
+    assert(stbi_write_jpg("images/bayerod.jpg", width, height, depth, output, 100));
+
+    bayer_matrix_free(bayer_matrix);
+    free(output);
+
+    printf("[BAYER]\n");
 }

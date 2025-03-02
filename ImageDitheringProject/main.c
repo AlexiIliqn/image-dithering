@@ -14,7 +14,7 @@ void make_grayscale(unsigned char* data, int width, int height, int depth);
 int main()
 {
     printf("Hello world!\n");
-    const char* source_file_name = "source.jpg";
+    const char* source_file_name = "images/source.jpg";
     unsigned char* source_img;
     int width, height, n;
     assert(stbi_info(source_file_name, &width, &height, &n));
@@ -35,7 +35,7 @@ void make_grayscale(unsigned char* data, int width, int height, int depth)
 
     image_grayscale(data, width, height, depth, output);
 
-    assert(stbi_write_jpg("grayscale.jpg", width, height, depth, output, 100));
+    assert(stbi_write_jpg("images/grayscale.jpg", width, height, depth, output, 100));
 
     free(output);
 
